@@ -28,6 +28,37 @@ public class Dodge extends JPanel implements KeyListener {
 		repaint();
 	}
 	
+//	What will happen when we press any key
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int c = e.getKeyCode();
+		if(c == KeyEvent.VK_W) {
+			y--;
+		}
+		if(c == KeyEvent.VK_S) {
+			y++;
+		}
+		if(c == KeyEvent.VK_A) {
+			x--;
+		}
+		if(c == KeyEvent.VK_D) {
+			x++;
+		}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+	
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+
+		
+	}
+	
 	public static void main(String [] args) {
 		Dodge game = new Dodge();
 		
@@ -42,21 +73,5 @@ public class Dodge extends JPanel implements KeyListener {
 		frame.setVisible(true);
 	}
 
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }	
