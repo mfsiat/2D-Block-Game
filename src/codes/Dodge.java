@@ -20,6 +20,7 @@ public class Dodge extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		g.setColor(Color.WHITE);
+		g.fillOval(x, y, 20, 20);
 		repaint();
 	}
 	
