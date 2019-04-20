@@ -13,7 +13,9 @@ public class Dodge extends JPanel implements KeyListener {
 	
 	public Dodge() {
 		setSize(new Dimension(500, 400));
-		setPreferredSize(new Dimension(500, 400)); 
+		setPreferredSize(new Dimension(500, 400));
+		setFocusable(true); // Focus on actual key pressed
+		addKeyListener(this);
 	}
 	
 	// built in method that takes graphics g as perameter
