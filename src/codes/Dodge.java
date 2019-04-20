@@ -1,10 +1,12 @@
 package codes;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
+
 import javax.swing.*;
 
 
-public class Dodge extends JPanel {
+public class Dodge extends JPanel implements KeyListener {
 	 
 	private int x = 5, y = 5;
 	
@@ -20,7 +22,8 @@ public class Dodge extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		g.setColor(Color.WHITE);
-		g.fillOval(x, y, 20, 20);
+		g.fillOval(x, y, 20, 20);// Creates the oval or ball shape icon
+		
 		repaint();
 	}
 	
