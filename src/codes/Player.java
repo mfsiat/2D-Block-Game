@@ -21,6 +21,7 @@ public class Player extends Entity{
 		g.fillOval(x, y, w, h);
 	}
 	
+//	by calling this method the xd and yd value will change
 	private void move() {
 		
 	}
