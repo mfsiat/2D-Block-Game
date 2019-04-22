@@ -8,12 +8,10 @@ import javax.swing.*;
 
 
 public class Dodge extends JPanel implements KeyListener {
-	 
-	private int x = 5, y = 5;
 	
 	public Dodge() {
-		setSize(new Dimension(500, 400));
-		setPreferredSize(new Dimension(500, 400));
+		setSize(800, 600);
+		setPreferredSize(new Dimension(800, 600));
 		setFocusable(true); // Focus on actual key pressed
 		addKeyListener(this);
 	}
@@ -31,9 +29,7 @@ public class Dodge extends JPanel implements KeyListener {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
-		g.setColor(Color.WHITE);
-		g.fillOval(x, y, 20, 20);// Creates the oval or ball shape icon
-		
+		g.dispose();
 		repaint();
 	}
 	
@@ -42,16 +38,12 @@ public class Dodge extends JPanel implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int c = e.getKeyCode();
 		if(c == KeyEvent.VK_W) {
-			y-=5;
 		}
 		if(c == KeyEvent.VK_S) {
-			y+=5;
 		}
 		if(c == KeyEvent.VK_A) {
-			x-=5;
 		}
 		if(c == KeyEvent.VK_D) {
-			x+=5;
 		}
 		
 	}
@@ -76,7 +68,7 @@ public class Dodge extends JPanel implements KeyListener {
 		frame.add(game);
 		frame.pack();
 		frame.setResizable(false);   
-		frame.setSize(new Dimension(500, 400));
+		frame.setSize(new Dimension(800, 600));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null); // centers the frame in the middle of the screen
 		frame.setVisible(true);
