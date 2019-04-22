@@ -18,6 +18,13 @@ public class Dodge extends JPanel implements KeyListener {
 		addKeyListener(this);
 	}
 	
+//	for preventing flicker 
+//	built in method update buffers g to stop flickering
+	@Override
+	public void update(Graphics g) {
+		paint(g);
+	}
+	
 	// built in method that takes graphics g as perameter
 	// it helps to draw
 	public void paint(Graphics g) {
@@ -35,16 +42,16 @@ public class Dodge extends JPanel implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int c = e.getKeyCode();
 		if(c == KeyEvent.VK_W) {
-			y--;
+			y-=5;
 		}
 		if(c == KeyEvent.VK_S) {
-			y++;
+			y+=5;
 		}
 		if(c == KeyEvent.VK_A) {
-			x--;
+			x-=5;
 		}
 		if(c == KeyEvent.VK_D) {
-			x++;
+			x+=5;
 		}
 		
 	}
