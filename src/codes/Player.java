@@ -24,7 +24,8 @@ public class Player extends Entity{
 //	by calling this method the xd and yd value will change
 //	this ensures smooth movement
 	private void move() {
-		
+		x += xd;
+		y += yd;
 	}
 	
 	public void setXD(int value) {

@@ -9,11 +9,15 @@ import javax.swing.*;
 
 public class Dodge extends JPanel implements KeyListener {
 	
+	private Player player; // created a player instance
+	
 	public Dodge() {
 		setSize(800, 600);
 		setPreferredSize(new Dimension(800, 600));
 		setFocusable(true); // Focus on actual key pressed
 		addKeyListener(this);
+		
+		player = new Player(200, 200);
 	}
 	
 //	for preventing flicker 
@@ -28,6 +32,8 @@ public class Dodge extends JPanel implements KeyListener {
 	public void paint(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, getWidth(), getHeight());
+		
+		player.draw(g);
 		
 		g.dispose();
 		repaint();
