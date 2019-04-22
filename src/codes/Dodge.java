@@ -44,19 +44,24 @@ public class Dodge extends JPanel implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int c = e.getKeyCode();
 		if(c == KeyEvent.VK_W) {
-		}
-		if(c == KeyEvent.VK_S) {
+			player.setYD(-1);
 		}
 		if(c == KeyEvent.VK_A) {
+			player.setXD(-1);
+		}
+		if(c == KeyEvent.VK_S) {
+			player.setYD(1);
 		}
 		if(c == KeyEvent.VK_D) {
+			player.setXD(1);
 		}
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-	
+		player.setXD(0);
+		player.setYD(0);
 		
 	}
 
