@@ -12,7 +12,7 @@ public class Dodge extends JPanel implements KeyListener {
 	private Player player; // created a player instance
 	private Stage stage;
 	
-	
+	private EnemyManager manager; 
 	
 	public Dodge() {
 		setSize(800, 600);
@@ -22,7 +22,7 @@ public class Dodge extends JPanel implements KeyListener {
 		
 		stage = new Stage();
 		player = new Player(this, 200, 200);
-		
+		manager = new EnemyManager(this, 10);
 	}
 	
 //	for preventing flicker 
@@ -42,7 +42,7 @@ public class Dodge extends JPanel implements KeyListener {
 //		draws the instances and all the objects
 		stage.draw(g);
 		player.draw(g);
-		
+		manager.draw(g);
 		
 		g.dispose();
 		repaint();
