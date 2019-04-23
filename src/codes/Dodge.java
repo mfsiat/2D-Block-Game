@@ -12,6 +12,8 @@ public class Dodge extends JPanel implements KeyListener {
 	private Player player; // created a player instance
 	private Stage stage;
 	
+	
+	
 	public Dodge() {
 		setSize(800, 600);
 		setPreferredSize(new Dimension(800, 600));
@@ -20,6 +22,7 @@ public class Dodge extends JPanel implements KeyListener {
 		
 		stage = new Stage();
 		player = new Player(this, 200, 200);
+		
 	}
 	
 //	for preventing flicker 
@@ -35,8 +38,11 @@ public class Dodge extends JPanel implements KeyListener {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
+		
+//		draws the instances and all the objects
 		stage.draw(g);
 		player.draw(g);
+		
 		
 		g.dispose();
 		repaint();
