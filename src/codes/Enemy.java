@@ -35,6 +35,10 @@ public class Enemy extends Entity{
 		return dead;
 	}
 	
+	public Rectangle getHitbox() {
+		return hitbox;
+	}
+	
 	public void draw(Graphics g) {
 		move();
 		g.setColor(Color.CYAN);

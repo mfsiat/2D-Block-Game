@@ -1,6 +1,7 @@
 package codes;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +25,7 @@ public class EnemyManager {
 		int ss = enemies.size();
 		if(ss < amount) {
 			for (int i = 0; i < amount - ss; i++) {
-				enemies.add(new Enemy(instance, random.nextInt(778), 10));
+				enemies.add(new Enemy(instance, random.nextInt(778), random.nextInt(100) + 1));
 			}
 		} else if(ss > amount) {
 			for (int i = 0; i < ss - amount; i++) {
@@ -49,5 +50,14 @@ public class EnemyManager {
 		if(re) {
 			spawn();
 		}
+	}
+	
+	public boolean isColliding(Rectangle hitbox) {
+		boolean c = false;
+		for(int i = 0; i < enemies.size(); i++) {
+			if(hitbox.intersects(enemies.get(i).getHitbox()))
+				c = true;
+		}
+		return c;
 	}
 }

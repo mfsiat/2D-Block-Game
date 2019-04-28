@@ -9,8 +9,14 @@ import javax.swing.*;
 
 public class Dodge extends JPanel implements KeyListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Player player; // created a player instance
 	private Stage stage;
+	
+	private boolean isGameOver = false;
 	
 	private EnemyManager manager; 
 	
@@ -22,7 +28,7 @@ public class Dodge extends JPanel implements KeyListener {
 		
 		stage = new Stage();
 		player = new Player(this, 200, 200);
-		manager = new EnemyManager(this, 10);
+		manager = new EnemyManager(this, 6);
 	}
 	
 //	for preventing flicker 
@@ -41,8 +47,13 @@ public class Dodge extends JPanel implements KeyListener {
 		
 //		draws the instances and all the objects
 		stage.draw(g);
-		player.draw(g);
-		manager.draw(g);
+		if(!isGameOver) {
+			player.draw(g);
+			manager.draw(g);
+		} else {
+			g.setFont(new Font("Century Gothic", Font.BOLD, 24));
+			g.drawString("Game Over!!!!", 350, 250);
+		}
 		
 		g.dispose();
 		repaint();
@@ -66,6 +77,10 @@ public class Dodge extends JPanel implements KeyListener {
 		}
 		
 	}
+	
+	public void setGameOver(boolean flag) {
+		isGameOver = flag;
+	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -76,7 +91,7 @@ public class Dodge extends JPanel implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-
+		
 		
 	}
 	
@@ -84,11 +99,15 @@ public class Dodge extends JPanel implements KeyListener {
 		return stage;
 	}
 	
+	public EnemyManager getEnemyManager() {
+		return manager;
+	}
+	
 	public static void main(String [] args) {
 		Dodge game = new Dodge();
 		
 		JFrame frame = new JFrame();
-		frame.setTitle("Dodge the Rectangles");
+		frame.setTitle("Java 2D Block Game");
 		frame.add(game);
 		frame.pack();
 		frame.setResizable(false);   
