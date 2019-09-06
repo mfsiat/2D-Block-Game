@@ -21,8 +21,8 @@ public class Dodge extends JPanel implements KeyListener {
 	private EnemyManager manager; 
 	
 	public Dodge() {
-		setSize(800, 600);
-		setPreferredSize(new Dimension(800, 600));
+		setSize(800, 800);
+		setPreferredSize(new Dimension(800, 800));
 		setFocusable(true); // Focus on actual key pressed
 		addKeyListener(this);
 		
@@ -111,7 +111,7 @@ public class Dodge extends JPanel implements KeyListener {
 		frame.add(game);
 		frame.pack();
 		frame.setResizable(false);   
-		frame.setSize(new Dimension(800, 600));
+		frame.setSize(new Dimension(1000, 1000));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null); // centers the frame in the middle of the screen
 		frame.setVisible(true);

@@ -6,7 +6,7 @@ import java.awt.Rectangle;
 
 public class Stage {
 	
-	private Rectangle platform = new Rectangle(0, 540, 800, 100);
+	private Rectangle platform = new Rectangle(0, 540, 1000, 100);
 	
 	public Stage() {
 		
